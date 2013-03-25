@@ -60,6 +60,17 @@ module AsakusaSatellite::Hook
       @config = config
     end
 
+    def read_file(path)
+      plugin_dir = "plugins/as_#{self.class.name.underscore.split("_")[0...-1].join("_")}"
+      absolute_path = Rails.root.join(plugin_dir).join(path)
+
+      if block_given?
+        File::open(absolute_path) {|file| yield file}
+      else
+        File::read(absolute_path)
+      end
+    end
+
     private
     def config
       @config
