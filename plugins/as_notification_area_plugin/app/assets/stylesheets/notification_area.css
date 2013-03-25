@@ -1,0 +1,73 @@
+#notification_area {
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    top: 0px;
+    right: 0px;
+    width: 0px;
+    background: url(/plugin/as_notification_area_plugin/image/grey_wash_wall_@2X.png);
+    box-shadow: inset 10px 0px 10px rgba(0,0,0,0.4);
+    -webkit-box-shadow: inset 10px 0px 10px rgba(0,0,0,0.4);
+    -moz-box-shadow: inset 10px 0px 10px rgba(0,0,0,0.4);
+    transition: width 0.1s ease-out;
+    -webkit-transition: width 0.1s ease-out;
+    -moz-transition: width 0.1s ease-out;
+    white-space: nowrap;
+}
+
+#notification_area * {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+
+#notification_area a {
+    color: white;
+    text-decoration: none;
+}
+#notification_area a:hover {
+    text-decoration: underline;
+}
+
+#notification_area #grip {
+    cursor: ew-resize;
+    height: 100%;
+    width: 10px;
+    float: left;
+}
+
+#notification_area .notification_section {
+    margin-left: 20px;
+    color: white;
+}
+
+#notification_area .notification_section h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#notification_area .notification_section .info span {
+    display: block;
+}
+
+#open_button {
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    box-shadow: 5px 0px 5px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 5px 0px 5px rgba(0,0,0,0.4);
+    -moz-box-shadow: 5px 0px 5px rgba(0,0,0,0.4);
+}
+
+.main {
+    transition: transform 0.1s ease-out;
+    -webkit-transition: -webkit-transform 0.1s ease-out;
+    -moz-transition: -moz-transform 0.1s ease-out;
+}

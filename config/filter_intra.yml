@@ -18,7 +18,8 @@ filters:
 
 plugins:
  - dir: as_desktopnotification
-# - dir: as_global_js_css
+ - dir: as_global_js_css
+ - dir: as_notification_area_plugin
 # - dir: as_watage_plugin
  - dir: as_twitterauth_plugin
 # - dir: as_localauth_plugin
