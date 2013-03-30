@@ -21,6 +21,7 @@ plugins:
  - dir: as_global_js_css
  - dir: as_notification_area_plugin
  - dir: as_online_status
+ - dir: as_direct_message_plugin
 # - dir: as_watage_plugin
  - dir: as_twitterauth_plugin
 # - dir: as_localauth_plugin

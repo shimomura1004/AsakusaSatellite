@@ -1,0 +1,1 @@
+require 'direct_message_plugin_listener'

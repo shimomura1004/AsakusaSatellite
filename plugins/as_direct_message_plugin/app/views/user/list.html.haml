@@ -1,0 +1,9 @@
+%h1 All Users
+%div.user-list
+ - @users.each do |user|
+  %div.online-user
+   %img{:src => user.profile_image_url}
+   %div.info
+    %span
+     %a{:href => "/user/direct_message?user=#{user._id}"} #{user.screen_name}
+    %span #{user.name}
