@@ -1,0 +1,7 @@
+%div.notification_section
+ %h3 Room List
+ %div.content
+  %ul
+   - @all_live.sort{|a,b| b.updated_at <=> a.updated_at}.each do |room|
+    %li
+     %a{:href => "/chat/room/#{room._id}", :target => "_blank"} #{room.title}

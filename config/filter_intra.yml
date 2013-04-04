@@ -25,6 +25,7 @@ plugins:
  - dir: as_direct_message_plugin
  - dir: as_omniauth_crowd_plugin
  - dir: as_profile_setting
+ - dir: as_room_list_plugin
 # - dir: as_watage_plugin
  - dir: as_twitterauth_plugin
 # - dir: as_localauth_plugin
