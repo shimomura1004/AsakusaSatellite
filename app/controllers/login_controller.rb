@@ -16,7 +16,7 @@ class LoginController < ApplicationController
     User.find_or_create_by({:screen_name => user_info[:screen_name]}).tap do |user|
       user.name              = user_info[:name]
       user.email             = user_info[:email]
-      user.profile_image_url = user_info[:profile_image_url]
+      user.profile_image_url ||= user_info[:profile_image_url]
       user.save
       set_current_user(user)
     end
