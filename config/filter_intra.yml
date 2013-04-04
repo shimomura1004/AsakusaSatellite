@@ -23,6 +23,7 @@ plugins:
  - dir: as_notification_area_plugin
  - dir: as_online_status
  - dir: as_direct_message_plugin
+ - dir: as_profile_setting
 # - dir: as_watage_plugin
  - dir: as_twitterauth_plugin
 # - dir: as_localauth_plugin

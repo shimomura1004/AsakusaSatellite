@@ -1,0 +1,14 @@
+=form_for :account, :url => {:controller => :profile_setting, :action => :update} do |form|
+ %fieldset
+  %legend Your Profile
+  %div
+   %img{:src => current_user.profile_image_url}
+  %div
+   %table{:style => 'width: 100%;'}
+    %tr
+     %td{:style => 'width: 100px;'} Icon
+     %td= text_field :account, :image_url, :class => :text, :value => current_user.profile_image_url
+    %tr
+     %td Name
+     %td= text_field :account, :name, :class => :text, :value => current_user.name
+  =submit_tag "Update", :class => "submit red button large"
