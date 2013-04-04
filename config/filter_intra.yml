@@ -9,24 +9,17 @@ info:
 
 filters:
  - name: code_highlight_filter
-# - name: quote_it
  - name: auto_link
- - name: redmine_ticket_link_filter
- - name: twitter_link
  - name: emoji_filter
  - name: jira_ticket_link
-# - name: emoticon_filter
 
 plugins:
  - dir: as_desktopnotification
  - dir: as_global_js_css
  - dir: as_notification_area_plugin
+ - dir: as_room_list_plugin
  - dir: as_online_status
  - dir: as_direct_message_plugin
  - dir: as_omniauth_crowd_plugin
  - dir: as_profile_setting
- - dir: as_room_list_plugin
-# - dir: as_watage_plugin
- - dir: as_twitterauth_plugin
-# - dir: as_localauth_plugin
-# - dir: as_redmineauth_plugin
+ - dir: as_global_js_css
