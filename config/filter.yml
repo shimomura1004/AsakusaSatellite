@@ -13,6 +13,7 @@ filters:
  - name: redmine_ticket_link_filter
  - name: twitter_link
  - name: emoji_filter
+ - name: jira_ticket_link
 
 plugins:
  - dir: as_desktopnotification

@@ -1,0 +1,7 @@
+en:
+  input_jira_root: JIRA root
+  placeholder_jira_root: http://example.com/jira/
+  input_project_name: Project Name
+  placeholder_project_name: some-project
+  input_api_key: API Key
+  placeholder_api_key: <api key>
