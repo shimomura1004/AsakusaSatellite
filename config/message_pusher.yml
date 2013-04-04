@@ -9,7 +9,7 @@ engines:
   url: <%= ENV['MESSAGE_PUSHER_KEIMA_URL'] || 'http://localhost:3001' %>
   key: <%= ENV['MESSAGE_PUSHER_KEIMA_KEY'] || '4e7c45a1a2cb660517000001' %>
  socky:
-  http: http://localhost:3002/http
-  web_socket: ws://localhost:3002/websocket
+  http: http://10.5.5.83:3002/http
+  web_socket: ws://10.5.5.83:3002/websocket
   app: as
   secret: secret
