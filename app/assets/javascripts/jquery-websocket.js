@@ -50,7 +50,9 @@
             function(e){ fire('disconnect', e); }
         );
 
-        var channel = pusher.subscribe('as-' + config.room );
+        var channel = pusher.subscribe('as-' + config.room) ||
+                      pusher.channel('as-' + config.room);
+
         channel.bind('message_create',
             function(obj){ fire('create', parse(obj).content); }
         );

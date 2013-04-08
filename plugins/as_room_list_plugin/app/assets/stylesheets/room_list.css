@@ -1,0 +1,41 @@
+.notification_section .room_list {
+    margin-left: 5px;
+}
+
+.notification_section .room {
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+}
+
+.notification_section .room span {
+    text-shadow: 1px -1px 0 rgba(0,0,0,0.5);
+    margin-left: 5px;
+}
+
+.notification_section .room span.number {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    background-color: darkgray;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    -webkit-transition: opacity 0.3s ease-out;
+    -moz-transition: opacity 0.3s ease-out;
+}
+
+div.room-list-messages {
+    margin-left: 20px;
+}
+div.room-list-messages span {
+    font-size: 0.6em;
+}
+div.room-list-messages span.user-name {
+    border: white solid 1px;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}

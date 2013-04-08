@@ -1,7 +1,17 @@
 %div.notification_section
  %h3 Room List
- %div.content
-  %ul
-   - @all_live.sort{|a,b| b.updated_at <=> a.updated_at}.each do |room|
-    %li
-     %a{:href => "/chat/room/#{room._id}", :target => "_blank"} #{room.title}
+ %div.room_list
+  - @rooms.sort{|a,b| b[:room].updated_at <=> a[:room].updated_at}.each do |room|
+   %div.room{:id => room[:room]._id}
+    %span.number
+    %span
+     %a{:href => "/chat/room/#{room[:room]._id}", :target => "_blank"} #{room[:room].title}
+    %div.room-list-messages
+     - room[:messages].reverse.each do |message|
+      %div
+       %span.user-name #{message.user.name}
+       %span.message-body #{message.body}
+ :javascript
+  var as_room_list_plugin = {
+    rooms : [#{@rooms.map{|room| "'#{room[:room]._id}'"}.join(',')}]
+  };
