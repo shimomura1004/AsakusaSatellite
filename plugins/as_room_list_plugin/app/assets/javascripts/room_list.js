@@ -35,9 +35,12 @@
       incrementUnreadMessageCounter(content);
       updateLatestMessages(content, room_id);
     });
-
+ 
+    var visibility = false; 
     $("#" + room_id).bind('click', function(e){
       $(e.target).find(".number").css("opacity", "0").text("");
+      $(e.target).find(".room-list-messages").css("display", visibility ? "" : "none");
+      visibility = !visibility;
     });
   });
 })()
