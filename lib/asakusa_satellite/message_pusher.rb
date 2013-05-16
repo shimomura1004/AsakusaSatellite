@@ -125,6 +125,7 @@ module AsakusaSatellite
       def jsClass
         <<END
 (function() {
+console.log("connect socky");
  var map = {
   'connected' : 'socky:connection:established',
   'disconnected' : 'socky:connection:closed',

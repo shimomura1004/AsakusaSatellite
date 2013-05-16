@@ -27,7 +27,8 @@
  :javascript
   var AsakusaSatellite = {
     current : #{current_info(@room).to_json},
-    pusher    : #{AsakusaSatellite::MessagePusher.jsClass},
+    /*pusher    : #{AsakusaSatellite::MessagePusher.jsClass},
+    */
     form_auth : "#{form_authenticity_token}",
     url : {
         create  : "#{url_for(:controller=>'api/v1/message', :action=>'create')}",
@@ -45,4 +46,7 @@
         disconnect : "#{image_path('connection_fail.gif')}"
     }
   }
+  $(function(){
+    AsakusaSatellite.pusher = #{AsakusaSatellite::MessagePusher.jsClass};
+  });
  .script_in_chat_room= raw(call_hook(:script_in_chat_room, :room => @room))

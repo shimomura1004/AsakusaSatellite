@@ -25,6 +25,7 @@
     messages.append( $("<div></div>").append(name).append(body) );
   }
 
+  $(function(){
   $.each(as_room_list_plugin.rooms, function(idx, room_id){
     var channel_id = "as-"+room_id;
     var channel = AsakusaSatellite.pusher.subscribe(channel_id) ||
@@ -42,6 +43,7 @@
       $(e.target).find(".room-list-messages").css("display", visibility ? "" : "none");
       visibility = !visibility;
     });
+  });
   });
 })()
 

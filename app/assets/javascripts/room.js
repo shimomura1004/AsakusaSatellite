@@ -42,6 +42,7 @@ $(function() {
     // chat
     // ------------------------------
     var connected = false;
+setTimeout(function(){
     $(".message-list")
     .webSocket({
         pusher : AsakusaSatellite.pusher,
@@ -74,6 +75,7 @@ $(function() {
             $("img.websocket-status").attr('src', AsakusaSatellite.resouces.disconnect);
         }
     });
+},0);
 
     // ------------------------------
     // submit area

@@ -2,7 +2,8 @@
  * notify message_pusher event to clients via websocket and postMessage
  * @author codefirst
  */
-(function($, document, undefined) {
+//(function($, document, undefined) {
+$(function() {
     /**
      * notify message_pusher event to clients via websocket and postMessage
      * @param {Object} config.pusher message pusher object like Pusher, Keima, Socky
@@ -65,4 +66,5 @@
 
         return this;
     }
-})(jQuery, document);
+});
+//})(jQuery, document);

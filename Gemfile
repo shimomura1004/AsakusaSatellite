@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.14'
+gem 'keima'
 
 # mongoid
 gem 'mongoid', '2.5.1'

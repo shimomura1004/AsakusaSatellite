@@ -1,4 +1,4 @@
-(function(){
+$(function(){
     var origin = location.protocol+"//"+location.hostname;
     if (location.port != "") {
         origin += ":"+location.port
@@ -41,4 +41,4 @@
     AsakusaSatellite.pusher.connection.bind('connected', checkOnlineUsers);
     setInterval(checkOnlineUsers, 30 * 1000);
     checkOnlineUsers();
-})();
+});
