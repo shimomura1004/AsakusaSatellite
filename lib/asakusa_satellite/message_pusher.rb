@@ -126,8 +126,8 @@ module AsakusaSatellite
         <<END
 (function() {
  var map = {
-  'connected' : 'socky:connection:established',
-  'disconnected' : 'socky:connection:closed',
+  'connect' : 'socky:connection:established',
+  'disconnect' : 'socky:connection:closed',
   'failed'    : 'socky:connection:error',
  }
  var obj = new Socky.Client('#{@webSocket + '/' + @app}');

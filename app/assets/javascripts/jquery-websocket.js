@@ -40,15 +40,16 @@
             }
         }
 
-        pusher.connection.bind('connected',
-            function(e) { fire('connect', e); }
-        );
-        pusher.connection.bind('failed',
-            function(e){ fire('error', e); }
-        );
-        pusher.connection.bind('disconnected',
-            function(e){ fire('disconnect', e); }
-        );
+        var pusherEvents = [
+            'connect', 'connecting', 'disconnect',
+            'connect_failed', 'error',
+            'message', 'anything',
+            'reconnect_failed', 'reconnect', 'reconnecting'];
+        $.each(pusherEvents, function(_, event){
+            pusher.connection.bind(event,
+                function(e) { console.log(event); fire(event, e); }
+            );
+        });
 
         var channel = pusher.subscribe('as-' + config.room );
         channel.bind('message_create',
