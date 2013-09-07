@@ -50,9 +50,15 @@ module AsakusaSatellite::Hook
       super
     end
 
+    @@hooks = {}
     def self.render_on(hook, options={})
-      define_method hook do |context|
-        context[:controller].send(:render_to_string, {:locals => context}.merge(options))
+      if @@hooks[hook]
+        @@hooks[hook].push options
+      else
+        @@hooks[hook] = [options]
+        define_method hook do |context|
+          @@hooks[hook].map{|options| context[:controller].send(:render_to_string, {:locals => context}.merge(options))}.join("\n")
+        end
       end
     end
 
