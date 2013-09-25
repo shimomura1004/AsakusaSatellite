@@ -50,6 +50,10 @@ module AsakusaSatellite::Hook
       super
     end
 
+    def self.plugin_root
+      Pathname("plugins/as_#{self.name.underscore.split("_")[0...-1].join("_")}")
+    end
+
     @@hooks = {}
     def self.render_on(hook, options={})
       if @@hooks[hook]
@@ -57,7 +61,14 @@ module AsakusaSatellite::Hook
       else
         @@hooks[hook] = [options]
         define_method hook do |context|
-          @@hooks[hook].map{|options| context[:controller].send(:render_to_string, {:locals => context}.merge(options))}.join("\n")
+          rendered = @@hooks[hook].map do |options|
+            if options[:partial]
+              context[:controller].send(:render_to_string, {:locals => context}.merge(options))
+            elsif options[:jsfile]
+              "<script type='text/javascript'>#{File::read(options[:jsfile])}</script>"
+            end
+          end
+          rendered.join("\n")
         end
       end
     end
